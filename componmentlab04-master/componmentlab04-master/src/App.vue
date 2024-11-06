@@ -26,17 +26,19 @@ function navigateWithPageSize(size: number) {
 </script>
 
 <template>
-<div id="layout">
-    <header>
-      <div id="flashMessage" v-if="message">
+  <SpeedInsights />
+  <div class="text-center font-sans text-gray-700 antialias" id="layout">
+      <header>
+       <div id="flashMessage" class="animate-fade" v-if="message">
         <h4>{{ message }}</h4>
       </div>
+          <h1>Deploy with Vercel</h1>
       <div class="wrapper">
-        <nav>
-          <RouterLink to="/">Event</RouterLink> |
-          <RouterLink to="/about">About</RouterLink> |
-          <RouterLink to="/student">Student</RouterLink>
-          <div>
+        <nav class="py-6">
+          <RouterLink class="font-bold text-gray-700" exact-active-class="text-green-500" :to="{ name: 'event-list-view' }">Event</RouterLink> |
+          <RouterLink class="font-bold text-gray-700" exact-active-class="text-green-500" :to="{ name: 'about' }">About</RouterLink>|
+          <RouterLink class="font-bold text-gray-700" exact-active-class="text-green-500" to="/student">Student</RouterLink>
+        <div>
           <button class="page-size-btn" @click="navigateWithPageSize(3)">Page Size: 3</button>
           <button class="page-size-btn" @click="navigateWithPageSize(4)">Page Size: 4</button>
           <button class="page-size-btn" @click="navigateWithPageSize(5)">Page Size: 5</button>
@@ -70,7 +72,7 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #7aebba;
+  color: #8bbdec;
  }
 
 h2 {
@@ -89,20 +91,20 @@ h2 {
   padding: 5px 10px;
   font-size: 14px;
   cursor: pointer;
-  border: 1px solid #769cf4;
+  border: 1px solid #8db7f7;
   background-color: white;
-  color: #85b4f2;
+  color: #8db7f7;
   transition: all 0.3s ease;
 }
 
 .page-size-btn.active {
   background-color: white;
-  color: rgb(84, 171, 230);
+  color: green;
 }
 
 .page-size-btn:hover {
   background-color: white;
-  color: rgb(130, 219, 244);
+  color: green;
 }
 
 @keyframes yellofade {

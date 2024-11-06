@@ -40,16 +40,17 @@ const router = useRouter();
 </script>
 
 <template>
-  <div class="event-card">
- <RouterLink class="event-link" :to="{ name: 'event-detail-view', params:{ id: props.event.id } }">
+  <RouterLink class="event-link" :to="{ name: 'event-detail-view', params:{ id: props.event.id } }">
+    <div class="event-card cursor-pointer border border-gray-600 p-[20px] w-[250px] mb-[18px] hover:scale-101 hover:shadow-sp">
        <h2>{{ props.event.title }}</h2>
       <span>@{{ props.event.time }} on {{ props.event.date }}</span>
-  </RouterLink>
+    </div>
 
 
  <!-- <button @click="editEvent">Edit</button> -->
  <!-- <FlashMessage v-if="showFlashMessage" :message="flashMessage" @close="closeFlashMessage" /> -->
-  </div>
+  
+</RouterLink>
 </template>
 
 <style scoped>
